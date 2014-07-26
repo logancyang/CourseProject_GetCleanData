@@ -3,7 +3,7 @@
 ## read in only the mean() and std() features from the original data set
 value1 <- "mean()"
 value2 <- "std()"
-features <- read.table("~/R/GCDproject/UCI HAR Dataset/features.txt", stringsAsFactors = FALSE)
+features <- read.table("UCI HAR Dataset/features.txt", stringsAsFactors = FALSE)
 char <- features[,2]
 logical1 <- grepl(value1, char)
 logical2 <- grepl(value2, char)
@@ -17,14 +17,14 @@ for(i in 1:561){
 }
 cnames <- char[vector]
 
-X_test <- read.table("~/R/GCDproject/UCI HAR Dataset/test/X_test.txt", colClasses=select)
-X_train <- read.table("~/R/GCDproject/UCI HAR Dataset/train/X_train.txt", colClasses=select)
+X_test <- read.table("UCI HAR Dataset/test/X_test.txt", colClasses=select)
+X_train <- read.table("UCI HAR Dataset/train/X_train.txt", colClasses=select)
 
-Y_test <- read.table("~/R/GCDproject/UCI HAR Dataset/test/Y_test.txt")
-Y_train <- read.table("~/R/GCDproject/UCI HAR Dataset/train/Y_train.txt")
+Y_test <- read.table("UCI HAR Dataset/test/Y_test.txt")
+Y_train <- read.table("UCI HAR Dataset/train/Y_train.txt")
 
-sub_test <- read.table("~/R/GCDproject/UCI HAR Dataset/test/subject_test.txt")
-sub_train <- read.table("~/R/GCDproject/UCI HAR Dataset/train/subject_train.txt")
+sub_test <- read.table("UCI HAR Dataset/test/subject_test.txt")
+sub_train <- read.table("UCI HAR Dataset/train/subject_train.txt")
 
 train <- cbind(X_train, Y_train)
 test <- cbind(X_test, Y_test)
