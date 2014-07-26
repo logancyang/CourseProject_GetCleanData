@@ -56,4 +56,4 @@ new_data$activity <- act_list
 s <- split(new_data, list(new_data$subject, new_data$activity))
 result <- sapply(s, function(x) colMeans(x[, 2:80]))
 
-write.table(result, "./dataset_byLogan.txt", sep = " ")
+write.table(result, "./dataset_byLogan.txt", sep = " ", col.names=NA)
